@@ -49,3 +49,30 @@ WHERE (de.to_date = '9999-01-01') AND
 	(e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY emp_no;
 
+--Count number of employees eligible for mentorship by title
+SELECT COUNT(title),
+	title
+INTO mentorship_count
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY COUNT(title) DESC;
+
+--Get average salary per job title for retiring employees
+SELECT ROUND(AVG(s.salary),2) AS "average salary", rt.title
+INTO retirement_avg_salary
+FROM retirement_titles AS rt
+INNER JOIN salaries AS s
+	ON (rt.emp_no = s.emp_no)
+GROUP BY rt.title
+ORDER BY "average salary" DESC;
+
+
+--Get average salary per job title for mentorship employees
+SELECT ROUND(AVG(s.salary),2) AS "average salary", me.title
+INTO mentorship_avg_salary
+FROM mentorship_eligibility AS me
+INNER JOIN salaries AS s
+	ON (me.emp_no = s.emp_no)
+GROUP BY me.title
+ORDER BY "average salary" DESC;
+
