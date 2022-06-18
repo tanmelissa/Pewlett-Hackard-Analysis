@@ -40,5 +40,3 @@ Senior Engineer | 95
   - The mentorship_avg_salary table shows us the average salary of employees eligible for the mentorship program
     - ![image](https://user-images.githubusercontent.com/102273449/174420727-8402da07-2ae1-4e63-8241-97ff59ca6437.png)
   - If we assume that each employee eligible for the mentorship program is currently a full-time employee (40 hours) and will transition to being a part-time employee (20 hours), we can use these averages to calculate the approximate salary of each mentor for each job title. This can help the company to in their decision of if the mentorship program is worth the financial cost.
-  - 
-- two additional queries or tables that provide more insights
